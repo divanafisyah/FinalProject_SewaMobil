@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace FinalProject_SewaMobil
 {
-    public partial class Form1 : Form
+    public partial class Data_Karyawan : Form
     {
-        public Form1()
+        public Data_Karyawan()
         {
             InitializeComponent();
-        }
-
-        private void dataPToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
