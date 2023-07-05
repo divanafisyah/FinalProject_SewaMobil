@@ -38,6 +38,7 @@
             this.dataKaryawanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataMobilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataCabangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataPenyewaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +61,7 @@
             this.toolStrip2.Size = new System.Drawing.Size(800, 27);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
+            this.toolStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip2_ItemClicked);
             // 
             // toolStripDropDownButton1
             // 
@@ -67,6 +69,7 @@
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.formPemesananToolStripMenuItem,
             this.formPengembalianToolStripMenuItem,
+            this.dataPenyewaToolStripMenuItem,
             this.dataHirePointToolStripMenuItem,
             this.dataKaryawanToolStripMenuItem,
             this.dataMobilToolStripMenuItem,
@@ -113,6 +116,12 @@
             this.dataCabangToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dataCabangToolStripMenuItem.Text = "Data Cabang";
             // 
+            // dataPenyewaToolStripMenuItem
+            // 
+            this.dataPenyewaToolStripMenuItem.Name = "dataPenyewaToolStripMenuItem";
+            this.dataPenyewaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.dataPenyewaToolStripMenuItem.Text = "Data Penyewa";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -140,6 +149,7 @@
         private System.Windows.Forms.ToolStripMenuItem dataKaryawanToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dataMobilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dataCabangToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dataPenyewaToolStripMenuItem;
     }
 }
 
