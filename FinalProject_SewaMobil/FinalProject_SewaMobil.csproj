@@ -99,6 +99,9 @@
     <EmbeddedResource Include="Data Mobil.resx">
       <DependentUpon>Data Mobil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form Pemesanan.resx">
+      <DependentUpon>Form Pemesanan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
