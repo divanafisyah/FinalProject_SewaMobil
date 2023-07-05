@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.formPemesananToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,24 +38,16 @@
             this.dataMobilToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataCabangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataPenyewaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStrip2
             // 
             this.toolStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton1});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 25);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(800, 27);
             this.toolStrip2.TabIndex = 1;
@@ -70,9 +61,9 @@
             this.formPemesananToolStripMenuItem,
             this.formPengembalianToolStripMenuItem,
             this.dataPenyewaToolStripMenuItem,
-            this.dataHirePointToolStripMenuItem,
             this.dataKaryawanToolStripMenuItem,
             this.dataMobilToolStripMenuItem,
+            this.dataHirePointToolStripMenuItem,
             this.dataCabangToolStripMenuItem});
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -122,15 +113,27 @@
             this.dataPenyewaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dataPenyewaToolStripMenuItem.Text = "Data Penyewa";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(42, 184);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(704, 54);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "WELCOME TO RUBY RENTAL";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip2);
-            this.Controls.Add(this.toolStrip1);
             this.Name = "Form1";
             this.Text = "Main Menu";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
@@ -139,8 +142,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem formPemesananToolStripMenuItem;
@@ -150,6 +151,7 @@
         private System.Windows.Forms.ToolStripMenuItem dataMobilToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dataCabangToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dataPenyewaToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
     }
 }
 
