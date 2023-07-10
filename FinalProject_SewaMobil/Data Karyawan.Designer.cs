@@ -197,7 +197,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(784, 33);
+            this.bindingNavigator1.Size = new System.Drawing.Size(784, 38);
             this.bindingNavigator1.TabIndex = 25;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -275,7 +275,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 33);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorDeleteItem
@@ -329,9 +329,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(158, 407);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 20);
+            this.label7.Size = new System.Drawing.Size(111, 20);
             this.label7.TabIndex = 30;
-            this.label7.Text = "ID Cabang";
+            this.label7.Text = "Nama Cabang";
             // 
             // cbxcabang
             // 

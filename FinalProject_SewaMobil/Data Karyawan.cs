@@ -20,6 +20,9 @@ namespace FinalProject_SewaMobil
         public Data_Karyawan()
         {
             InitializeComponent();
+            koneksi = new SqlConnection(stringConnection);
+            this.bindingNavigator1.BindingSource = this.customerBindingSource;
+            refreshform();
 
         }
 
@@ -71,6 +74,21 @@ namespace FinalProject_SewaMobil
             btnSave.Enabled = false;
             clearBinding();
             Karyawan_Load();
+        }
+
+        private void Cabangcbx()
+        {
+            koneksi.Open();
+            string str = "select id_cabang, nm_cabang from dbo.cabang";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteReader();
+            koneksi.Close();
+            cbxcabang.DisplayMember = "nm_cabang";
+            cbxcabang.ValueMember = "id_cabang";
+            cbxcabang.DataSource = ds.Tables[0];
         }
 
         private void label1_Click(object sender, EventArgs e)
