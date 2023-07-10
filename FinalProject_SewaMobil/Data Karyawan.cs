@@ -98,7 +98,21 @@ namespace FinalProject_SewaMobil
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            txtkaryawan.Text = "";
+            idkarya.Text = "";
+            telpkrywn.Text = "";
+            adrkrywn.Text = "";
+            txtjabatan.Text = "";
+            txtkaryawan.Enabled = true;
+            txtjabatan.Enabled = true;
+            cbxcabang.Enabled = true;
+            idkarya.Enabled = true;
+            telpkrywn.Enabled = true;
+            adrkrywn.Enabled = true;
+            Cabangcbx();
+            btnAdd.Enabled = true;
+            btnClear.Enabled = true;
+            btnSave.Enabled = true;
         }
     }
 }
