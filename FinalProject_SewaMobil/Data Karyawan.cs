@@ -58,6 +58,21 @@ namespace FinalProject_SewaMobil
             this.idkarya.DataBindings.Clear();
         }
 
+        private void refreshform()
+        {
+            txtkaryawan.Enabled = false;
+            idkarya.Enabled = false;
+            telpkrywn.Enabled = false;
+            adrkrywn.Enabled = false;
+            txtjabatan.Enabled = false;
+            cbxcabang.Enabled = false;
+            btnAdd.Enabled = true;
+            btnClear.Enabled = false;
+            btnSave.Enabled = false;
+            clearBinding();
+            Karyawan_Load();
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
