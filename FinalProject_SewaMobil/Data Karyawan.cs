@@ -48,6 +48,16 @@ namespace FinalProject_SewaMobil
             koneksi.Close();
         }
 
+        private void clearBinding()
+        {
+            this.txtjabatan.DataBindings.Clear();
+            this.txtkaryawan.DataBindings.Clear();
+            this.adrkrywn.DataBindings.Clear();
+            this.telpkrywn.DataBindings.Clear();
+            this.cbxcabang.DataBindings.Clear();
+            this.idkarya.DataBindings.Clear();
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
