@@ -15,7 +15,7 @@ namespace FinalProject_SewaMobil
     {
         private string stringConnection = "data source=LAPTOP-9VURLJFC\\THARIQ_AZHAR;" + "database=SewaMobil;User ID=sa;Password=hurricane95";
         private SqlConnection koneksi;
-        private string id_kry, id_cabang, nama, telp, adr, jabatan;
+        private string id_kry, cabang, nama, telp, adr, jabatan;
         BindingSource customerBindingSource = new BindingSource();
         public Data_Karyawan()
         {
@@ -49,6 +49,40 @@ namespace FinalProject_SewaMobil
             this.cbxcabang.DataBindings.Add(
                new Binding("Text", this.customerBindingSource, "nm_cabang", true));
             koneksi.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            id_kry = idkarya.Text;
+            nama = txtkaryawan.Text;
+            jabatan = txtjabatan.Text;
+            adr = adrkrywn.Text;
+            telp = telpkrywn.Text;
+            cabang = cbxcabang.SelectedValue.ToString();
+            koneksi.Open();
+            string strs = "select id_cabang from dbo.cabang where nm_cabang = @dd";
+            SqlCommand cm = new SqlCommand(strs, koneksi);
+            cm.CommandType = CommandType.Text;
+            cm.Parameters.Add(new SqlParameter("@dd", cabang));
+            SqlDataReader dr = cm.ExecuteReader();
+            dr.Close();
+            string str = "insert into dbo.Mahasiswa (id_kry, nm_kry, jabatan, telp_kry, adr_kry, id_cabang)" +
+                "values(@id, @nm, @jabatan, @telp, @adr, @idc)";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new SqlParameter("@id", id_kry));
+            cmd.Parameters.Add(new SqlParameter("@nm", nama));
+            cmd.Parameters.Add(new SqlParameter("@jabatan", jabatan));
+            cmd.Parameters.Add(new SqlParameter("@telp", telp));
+            cmd.Parameters.Add(new SqlParameter("@adr", adr));
+            cmd.Parameters.Add(new SqlParameter("@idc", cabang));
+            cmd.ExecuteNonQuery();
+
+            koneksi.Close();
+
+            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            refreshform();
         }
 
         private void clearBinding()
