@@ -132,7 +132,70 @@ namespace FinalProject_SewaMobil
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            string id = idpenyewa.Text;
+            string nma = txtnama.Text;
+            string adrs = txtadr.Text;
+            string notelp = txttelp.Text;
+            string identitas = cbxidentity.Text;
+            string cbx = cbxkrywn.Text;
 
+            if (id == "")
+            {
+                MessageBox.Show("ID Penyewa tidak valid", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (nma == "")
+            {
+                MessageBox.Show("Masukkan Nama Penyewa", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (adrs == "")
+            {
+                MessageBox.Show("Masukkan Alamat Penyewa", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (notelp == "")
+            {
+                MessageBox.Show("Masukkan No Telepon", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (identitas == "")
+            {
+                MessageBox.Show("Masukkan identitas", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string sql = "UPDATE penyewa SET nm_penyewa = @nm, adr_penyewa = @adr, telp_penyewa = @telp, identitas = @idnt, id_kry = @idk WHERE id_penyewa = @idp";
+            using (SqlCommand command = new SqlCommand(sql, koneksi))
+            {
+                command.Parameters.AddWithValue("@idp", id);
+                command.Parameters.AddWithValue("@nm", nma);
+                command.Parameters.AddWithValue("@idnt", identitas);
+                command.Parameters.AddWithValue("@telp", notelp);
+                command.Parameters.AddWithValue("@adr", adrs);
+                command.Parameters.AddWithValue("@idk", cbx);
+
+                try
+                {
+                    koneksi.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Data berhasil diperbarui", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        koneksi.Close();
+                        refreshform();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data tidak ditemukan.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
         }
 
         private void Penyewa_Load()
