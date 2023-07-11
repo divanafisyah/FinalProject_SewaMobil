@@ -51,6 +51,38 @@ namespace FinalProject_SewaMobil
             koneksi.Close();
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            id_hp = txtID.Text;
+            nama = txtnama.Text;
+            adr = txtadr.Text;
+            telp = txttelp.Text;
+            cabang = cbxcabang.SelectedValue.ToString();
+            koneksi.Open();
+            string strs = "select id_cabang from dbo.cabang where nm_cabang = @dd";
+            SqlCommand cm = new SqlCommand(strs, koneksi);
+            cm.CommandType = CommandType.Text;
+            cm.Parameters.Add(new SqlParameter("@dd", cabang));
+            SqlDataReader dr = cm.ExecuteReader();
+            dr.Close();
+            string str = "insert into dbo.hire_point (id_hp, nm_hp, adr_hp, telp_hp, id_cabang)" +
+                "values(@id, @nm, @adr, @telp, @idc)";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new SqlParameter("@id", id_hp));
+            cmd.Parameters.Add(new SqlParameter("@nm", nama));
+            cmd.Parameters.Add(new SqlParameter("@adr", adr));
+            cmd.Parameters.Add(new SqlParameter("@telp", telp));
+            cmd.Parameters.Add(new SqlParameter("@idc", cabang));
+            cmd.ExecuteNonQuery();
+
+            koneksi.Close();
+
+            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            refreshform();
+        }
+
         private void clearBinding()
         {
             this.txtID.DataBindings.Clear();
