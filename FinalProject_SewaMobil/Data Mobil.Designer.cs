@@ -46,7 +46,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtkapas = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.IDcabang = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtbiaya = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -65,6 +64,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.cbxcabang = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
@@ -196,7 +196,7 @@
             // 
             // txtkapas
             // 
-            this.txtkapas.Location = new System.Drawing.Point(324, 311);
+            this.txtkapas.Location = new System.Drawing.Point(324, 305);
             this.txtkapas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtkapas.Name = "txtkapas";
             this.txtkapas.Size = new System.Drawing.Size(271, 26);
@@ -211,22 +211,14 @@
             this.label9.TabIndex = 29;
             this.label9.Text = "Kapasitas Penumpang";
             // 
-            // IDcabang
-            // 
-            this.IDcabang.Location = new System.Drawing.Point(324, 345);
-            this.IDcabang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.IDcabang.Name = "IDcabang";
-            this.IDcabang.Size = new System.Drawing.Size(271, 26);
-            this.IDcabang.TabIndex = 32;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(153, 351);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 20);
+            this.label10.Size = new System.Drawing.Size(118, 20);
             this.label10.TabIndex = 31;
-            this.label10.Text = "ID Cabang";
+            this.label10.Text = "Cabang Pemilik";
             // 
             // txtbiaya
             // 
@@ -397,19 +389,27 @@
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             // 
+            // cbxcabang
+            // 
+            this.cbxcabang.FormattingEnabled = true;
+            this.cbxcabang.Location = new System.Drawing.Point(324, 344);
+            this.cbxcabang.Name = "cbxcabang";
+            this.cbxcabang.Size = new System.Drawing.Size(271, 28);
+            this.cbxcabang.TabIndex = 40;
+            // 
             // Data_Mobil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
             this.ClientSize = new System.Drawing.Size(900, 562);
+            this.Controls.Add(this.cbxcabang);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtbiaya);
-            this.Controls.Add(this.IDcabang);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtkapas);
             this.Controls.Add(this.label9);
@@ -455,7 +455,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtkapas;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox IDcabang;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtbiaya;
         private System.Windows.Forms.Label label5;
@@ -474,5 +473,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.ComboBox cbxcabang;
     }
 }
