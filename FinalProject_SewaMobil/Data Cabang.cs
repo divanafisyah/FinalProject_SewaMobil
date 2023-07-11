@@ -20,6 +20,50 @@ namespace FinalProject_SewaMobil
         public Data_Cabang()
         {
             InitializeComponent();
+            koneksi = new SqlConnection(stringConnection);
+            this.bindingNavigator1.BindingSource = this.customerBindingSource;
+            refreshform();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            txtcabang.Text = "";
+            txtalamat.Text = "";
+            txttelepon.Text = "";
+            txtjumlah.Text = "";
+            txtID.Text = "";
+            txtcabang.Enabled = true;
+            txtalamat.Enabled = true;
+            txttelepon.Enabled = true;
+            txtjumlah.Enabled = true;
+            txtID.Enabled = true;
+            btnAdd.Enabled = true;
+            btnClear.Enabled = true;
+            btnSave.Enabled = true;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            cabang = txtID.Text;
+            nama = txtcabang.Text;
+            adr = txtalamat.Text;
+            telp = txttelepon.Text;
+            jumlah = txtjumlah.Text;
+            koneksi.Open();
+            string str = "insert into dbo.cabang (id_cabang, nm_cabang, adr_cabang, telp_cabang, jmlh_mobil) " +
+                "VALUES (@id, @nm, @adr, @telp, @jmlh)";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new SqlParameter("@id", cabang));
+            cmd.Parameters.Add(new SqlParameter("@nm", nama));
+            cmd.Parameters.Add(new SqlParameter("@adr", adr));
+            cmd.Parameters.Add(new SqlParameter("@telp", telp));
+            cmd.Parameters.Add(new SqlParameter("@jmlh", jumlah));
+            cmd.ExecuteNonQuery();
+
+            koneksi.Close();
+            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            refreshform();
         }
 
         private void Cabang_Load()
