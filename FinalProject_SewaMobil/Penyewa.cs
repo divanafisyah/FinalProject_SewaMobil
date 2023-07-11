@@ -25,6 +25,24 @@ namespace FinalProject_SewaMobil
             refreshform();
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            txtnama.Text = "";
+            txtadr.Text = "";
+            txttelp.Text = "";
+            idpenyewa.Text = "";
+            txtnama.Enabled = true;
+            txtadr.Enabled = true;
+            txttelp.Enabled = true;
+            idpenyewa.Enabled = true;
+            cbxidentity.Enabled = true;
+            cbxkrywn.Enabled = true;
+            Karyawancbx();
+            btnAdd.Enabled = true;
+            btnClear.Enabled = true;
+            btnSave.Enabled = true;
+        }
+
         private void Penyewa_Load()
         {
             koneksi.Open();
