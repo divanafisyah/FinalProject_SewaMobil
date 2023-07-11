@@ -97,6 +97,111 @@ namespace FinalProject_SewaMobil
             this.Hide();
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string id = idkarya.Text;
+            if (id == "")
+            {
+                MessageBox.Show("Masukkan ID Karyawan yang akan dihapus", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string sql = "DELETE FROM karyawan WHERE id_kry = @id_kry";
+            using (SqlCommand command = new SqlCommand(sql, koneksi))
+            {
+                command.Parameters.AddWithValue("@id_kry", id);
+
+                try
+                {
+                    koneksi.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        koneksi.Close();
+                        refreshform();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data tidak ditemukan.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string id = idkarya.Text;
+            string nma = txtkaryawan.Text;
+            string adrs = adrkrywn.Text;
+            string notelp = telpkrywn.Text;
+            string jabatan = txtjabatan.Text;
+            string cbx = cbxcabang.Text;
+
+            if (id == "")
+            {
+                MessageBox.Show("ID Karyawan tidak valid", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (nma == "")
+            {
+                MessageBox.Show("Masukkan Nama Karyawan", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (adrs == "")
+            {
+                MessageBox.Show("Masukkan Alamat Karyawan", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (notelp == "")
+            {
+                MessageBox.Show("Masukkan No Telepon", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (jabatan == "")
+            {
+                MessageBox.Show("Masukkan Jabatan", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string sql = "UPDATE karyawan SET nm_kry = @nm, jabatan = @jbtn, telp_kry = @telp, adr_kry = @adr, id_cabang = @idc WHERE id_kry = @idk";
+            using (SqlCommand command = new SqlCommand(sql, koneksi))
+            {
+                command.Parameters.AddWithValue("@idk", id);
+                command.Parameters.AddWithValue("@nm", nma);
+                command.Parameters.AddWithValue("@jbtn", jabatan);
+                command.Parameters.AddWithValue("@telp", notelp);
+                command.Parameters.AddWithValue("@adr", adrs);
+                command.Parameters.AddWithValue("@idc", cbx);
+
+                try
+                {
+                    koneksi.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Data berhasil diperbarui", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        koneksi.Close();
+                        refreshform();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data tidak ditemukan.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+
+        }
+
         private void clearBinding()
         {
             this.txtjabatan.DataBindings.Clear();
