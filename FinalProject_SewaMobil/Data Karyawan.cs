@@ -30,7 +30,7 @@ namespace FinalProject_SewaMobil
         {
             koneksi.Open();
             SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_kry, m.nm_kry, "
-                + "m.adr_kry, m.jabatan, m.telp_kry, p.id_cabang From dbo.karyawan m " +
+                + "m.jabatan, m.telp_kry, m.adr_kry, p.id_cabang From dbo.karyawan m " +
                 "join dbo.cabang p on m.id_cabang = p.id_cabang", koneksi));
             DataSet ds = new DataSet();
             dataAdapter1.Fill(ds);
@@ -40,12 +40,12 @@ namespace FinalProject_SewaMobil
                 new Binding("Text", this.customerBindingSource, "id_kry", true));
             this.txtkaryawan.DataBindings.Add(
                 new Binding("Text", this.customerBindingSource, "nm_kry", true));
-            this.adrkrywn.DataBindings.Add(
-               new Binding("Text", this.customerBindingSource, "adr_kry", true));
             this.txtjabatan.DataBindings.Add(
                new Binding("Text", this.customerBindingSource, "jabatan", true));
             this.telpkrywn.DataBindings.Add(
                new Binding("Text", this.customerBindingSource, "telp_kry", true));
+            this.adrkrywn.DataBindings.Add(
+               new Binding("Text", this.customerBindingSource, "adr_kry", true));
             this.cbxcabang.DataBindings.Add(
                new Binding("Text", this.customerBindingSource, "nm_cabang", true));
             koneksi.Close();
@@ -66,7 +66,7 @@ namespace FinalProject_SewaMobil
             cm.Parameters.Add(new SqlParameter("@dd", cabang));
             SqlDataReader dr = cm.ExecuteReader();
             dr.Close();
-            string str = "insert into dbo.Mahasiswa (id_kry, nm_kry, jabatan, telp_kry, adr_kry, id_cabang)" +
+            string str = "insert into dbo.karyawan (id_kry, nm_kry, jabatan, telp_kry, adr_kry, id_cabang)" +
                 "values(@id, @nm, @jabatan, @telp, @adr, @idc)";
             SqlCommand cmd = new SqlCommand(str, koneksi);
             cmd.CommandType = CommandType.Text;

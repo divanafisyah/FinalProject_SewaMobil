@@ -43,11 +43,45 @@ namespace FinalProject_SewaMobil
             btnSave.Enabled = true;
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            id_sewa = idpenyewa.Text;
+            nama = txtnama.Text;
+            ident = cbxidentity.Text;
+            adr = txtadr.Text;
+            telp = txttelp.Text;
+            krywn = cbxkrywn.SelectedValue.ToString();
+            koneksi.Open();
+            string strs = "select id_kry from dbo.karyawan where nm_kry = @kr";
+            SqlCommand cm = new SqlCommand(strs, koneksi);
+            cm.CommandType = CommandType.Text;
+            cm.Parameters.Add(new SqlParameter("@kr", krywn));
+            SqlDataReader dr = cm.ExecuteReader();
+            dr.Close();
+            string str = "insert into dbo.penyewa (id_penyewa, nm_penyewa, adr_penyewa, telp_penyewa, identitas, id_kry)" +
+                "values(@id, @nm, @adr, @telp, @idt, @idk)";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new SqlParameter("@id", id_sewa));
+            cmd.Parameters.Add(new SqlParameter("@nm", nama));
+            cmd.Parameters.Add(new SqlParameter("@adr", adr));
+            cmd.Parameters.Add(new SqlParameter("@telp", telp));
+            cmd.Parameters.Add(new SqlParameter("@idt", ident));
+            cmd.Parameters.Add(new SqlParameter("@idk", krywn));
+            cmd.ExecuteNonQuery();
+
+            koneksi.Close();
+
+            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            refreshform();
+        }
+
         private void Penyewa_Load()
         {
             koneksi.Open();
             SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_penyewa, m.nm_penyewa, "
-                + "m.adr_penyewa, m.identitas, m.telp_penyewa, p.id_kry From dbo.penyewa m " +
+                + "m.adr_penyewa, m.telp_penyewa, m.identitas, p.id_kry From dbo.penyewa m " +
                 "join dbo.karyawan p on m.id_kry = p.id_kry", koneksi));
             DataSet ds = new DataSet();
             dataAdapter1.Fill(ds);
@@ -59,10 +93,10 @@ namespace FinalProject_SewaMobil
                 new Binding("Text", this.customerBindingSource, "nm_penyewa", true));
             this.txtadr.DataBindings.Add(
                new Binding("Text", this.customerBindingSource, "adr_penyewa", true));
-            this.cbxidentity.DataBindings.Add(
-               new Binding("Text", this.customerBindingSource, "identitas", true));
             this.txttelp.DataBindings.Add(
                new Binding("Text", this.customerBindingSource, "telp_penyewa", true));
+            this.cbxidentity.DataBindings.Add(
+               new Binding("Text", this.customerBindingSource, "identitas", true));
             this.cbxkrywn.DataBindings.Add(
                new Binding("Text", this.customerBindingSource, "id_kry", true));
             koneksi.Close();
