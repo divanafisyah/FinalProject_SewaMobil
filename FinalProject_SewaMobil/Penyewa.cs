@@ -47,6 +47,31 @@ namespace FinalProject_SewaMobil
             koneksi.Close();
         }
 
+        private void clearBinding()
+        {
+            this.txtnama.DataBindings.Clear();
+            this.txtadr.DataBindings.Clear();
+            this.txttelp.DataBindings.Clear();
+            this.cbxidentity.DataBindings.Clear();
+            this.cbxkrywn.DataBindings.Clear();
+            this.idpenyewa.DataBindings.Clear();
+        }
+
+        private void refreshform()
+        {
+            txtnama.Enabled = false;
+            txtadr.Enabled = false;
+            txttelp.Enabled = false;
+            cbxidentity.Enabled = false;
+            cbxkrywn.Enabled = false;
+            idpenyewa.Enabled = false;
+            btnAdd.Enabled = true;
+            btnClear.Enabled = false;
+            btnSave.Enabled = false;
+            clearBinding();
+            Penyewa_Load();
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
