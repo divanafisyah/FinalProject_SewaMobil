@@ -16,6 +16,47 @@ namespace FinalProject_SewaMobil
         private string stringConnection = "data source=LAPTOP-9VURLJFC\\THARIQ_AZHAR;" + "database=SewaMobil;User ID=sa;Password=hurricane95";
         private SqlConnection koneksi;
         private string idcar, cabang, nama, merk, tipe, warna, tahun, kapas, biaya;
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            idcar = IDmobil.Text;
+            nama = txtnama.Text;
+            merk = txtmerk.Text;
+            tipe = txttipe.Text;
+            warna = txtwarna.Text;
+            kapas = txtkapas.Text;
+            biaya = txtbiaya.Text;
+            tahun = txttahun.Text;
+            cabang = cbxcabang.SelectedValue.ToString();
+            koneksi.Open();
+            string strs = "select id_cabang from dbo.cabang where nm_cabang = @dd";
+            SqlCommand cm = new SqlCommand(strs, koneksi);
+            cm.CommandType = CommandType.Text;
+            cm.Parameters.Add(new SqlParameter("@dd", cabang));
+            SqlDataReader dr = cm.ExecuteReader();
+            dr.Close();
+            string str = "insert into dbo.mobil (id_mobil, nm_mobil, merk, tipe, warna, thn_buat, kapasitas, biaya_sewa_hari, id_cabang)" +
+                "values(@id, @nm, @merk, @tipe, @wrn, @thn, @kapas, @biaya, @idc)";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add(new SqlParameter("@id", idcar));
+            cmd.Parameters.Add(new SqlParameter("@nm", nama));
+            cmd.Parameters.Add(new SqlParameter("@merk", merk));
+            cmd.Parameters.Add(new SqlParameter("@tipe", tipe));
+            cmd.Parameters.Add(new SqlParameter("@wrn", warna));
+            cmd.Parameters.Add(new SqlParameter("@thn", tahun));
+            cmd.Parameters.Add(new SqlParameter("@kapas", kapas));
+            cmd.Parameters.Add(new SqlParameter("@biaya", biaya));
+            cmd.Parameters.Add(new SqlParameter("@idc", cabang));
+            cmd.ExecuteNonQuery();
+
+            koneksi.Close();
+
+            MessageBox.Show("Data Berhasil Disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            refreshform();
+        }
+
         BindingSource customerBindingSource = new BindingSource();
         public Data_Mobil()
         {
@@ -84,6 +125,21 @@ namespace FinalProject_SewaMobil
             Mobil_Load();
         }
 
+        private void Cabangcbx()
+        {
+            koneksi.Open();
+            string str = "select id_cabang, nm_cabang from dbo.cabang";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteReader();
+            koneksi.Close();
+            cbxcabang.DisplayMember = "nm_cabang";
+            cbxcabang.ValueMember = "id_cabang";
+            cbxcabang.DataSource = ds.Tables[0];
+        }
+
         private void label6_Click(object sender, EventArgs e)
         {
 
@@ -91,7 +147,27 @@ namespace FinalProject_SewaMobil
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            txtbiaya.Text = "";
+            txtkapas.Text = "";
+            txtmerk.Text = "";
+            txtnama.Text = "";
+            txttahun.Text = "";
+            IDmobil.Text = "";
+            txttipe.Text = "";
+            txtwarna.Text = "";
+            txttipe.Enabled = true;
+            txtwarna.Enabled = true;
+            cbxcabang.Enabled = true;
+            txtbiaya.Enabled = true;
+            txtkapas.Enabled = true;
+            txtmerk.Enabled = true;
+            txtnama.Enabled = true;
+            txttahun.Enabled = true;
+            IDmobil.Enabled = true;
+            Cabangcbx();
+            btnAdd.Enabled = true;
+            btnClear.Enabled = true;
+            btnSave.Enabled = true;
         }
     }
 }
