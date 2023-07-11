@@ -53,6 +53,37 @@ namespace FinalProject_SewaMobil
             koneksi.Close();
         }
 
+        private void clearBinding()
+        {
+            this.txtbiaya.DataBindings.Clear();
+            this.txtkapas.DataBindings.Clear();
+            this.txtmerk.DataBindings.Clear();
+            this.txtnama.DataBindings.Clear();
+            this.cbxcabang.DataBindings.Clear();
+            this.txttahun.DataBindings.Clear();
+            this.txttipe.DataBindings.Clear();
+            this.IDmobil.DataBindings.Clear();
+            this.txtwarna.DataBindings.Clear();
+        }
+
+        private void refreshform()
+        {
+            txtnama.Enabled = false;
+            txtmerk.Enabled = false;
+            txtkapas.Enabled = false;
+            txtbiaya.Enabled = false;
+            txttahun.Enabled = false;
+            txttipe.Enabled = false;
+            txtwarna.Enabled = false;
+            IDmobil.Enabled = false;
+            cbxcabang.Enabled = false;
+            btnAdd.Enabled = true;
+            btnClear.Enabled = false;
+            btnSave.Enabled = false;
+            clearBinding();
+            Mobil_Load();
+        }
+
         private void label6_Click(object sender, EventArgs e)
         {
 
