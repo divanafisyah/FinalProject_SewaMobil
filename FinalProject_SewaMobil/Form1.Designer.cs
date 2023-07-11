@@ -109,6 +109,7 @@
             this.dataHirePointToolStripMenuItem.Name = "dataHirePointToolStripMenuItem";
             this.dataHirePointToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.dataHirePointToolStripMenuItem.Text = "Data Hire Point";
+            this.dataHirePointToolStripMenuItem.Click += new System.EventHandler(this.dataHirePointToolStripMenuItem_Click);
             // 
             // dataCabangToolStripMenuItem
             // 
