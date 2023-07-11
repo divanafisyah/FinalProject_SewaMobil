@@ -26,6 +26,9 @@ namespace FinalProject_SewaMobil
         public Data_Hire_Point()
         {
             InitializeComponent();
+            koneksi = new SqlConnection(stringConnection);
+            this.bindingNavigator1.BindingSource = this.customerBindingSource;
+            refreshform();
         }
 
         private void HP_Load()
