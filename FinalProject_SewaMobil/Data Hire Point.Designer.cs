@@ -340,6 +340,7 @@
             this.btnUpdate.TabIndex = 42;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // Data_Hire_Point
             // 

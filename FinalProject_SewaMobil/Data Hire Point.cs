@@ -134,6 +134,72 @@ namespace FinalProject_SewaMobil
             }
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string id_hp = txtID.Text;
+            string nama = txtnama.Text;
+            string adr = txtadr.Text;
+            string telp = txttelp.Text;
+            string cabang = cbxcabang.Text;
+
+            if (id_hp == "")
+            {
+                MessageBox.Show("ID Hire Point tidak valid", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (nama == "")
+            {
+                MessageBox.Show("Masukkan Nama Hire Point", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (adr == "")
+            {
+                MessageBox.Show("Masukkan Alamat Hire Point", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (telp == "")
+            {
+                MessageBox.Show("Masukkan No Telepon", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (cabang == "")
+            {
+                MessageBox.Show("Masukkan Nama Cabang", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string sql = "UPDATE hire_point SET id_hp = @id, nm_hp = @nm, adr_hp = @adr, telp_hp = @telp, id_cabang = @idc WHERE id_hp = @id";
+            using (SqlCommand command = new SqlCommand(sql, koneksi))
+            {
+                command.Parameters.AddWithValue("@id", id_hp);
+                command.Parameters.AddWithValue("@nm", nama);
+                command.Parameters.AddWithValue("@adr", adr);
+                command.Parameters.AddWithValue("@telp", telp);
+                command.Parameters.AddWithValue("@idc", cabang);
+
+                try
+                {
+                    koneksi.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Data berhasil diperbarui", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        koneksi.Close();
+                        refreshform();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data tidak ditemukan.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
         private void clearBinding()
         {
             this.txtID.DataBindings.Clear();
