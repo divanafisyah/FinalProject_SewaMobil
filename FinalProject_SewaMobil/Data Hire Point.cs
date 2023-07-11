@@ -74,6 +74,21 @@ namespace FinalProject_SewaMobil
             HP_Load();
         }
 
+        private void Cabangcbx()
+        {
+            koneksi.Open();
+            string str = "select id_cabang, nm_cabang from dbo.cabang";
+            SqlCommand cmd = new SqlCommand(str, koneksi);
+            SqlDataAdapter da = new SqlDataAdapter(str, koneksi);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cmd.ExecuteReader();
+            koneksi.Close();
+            cbxcabang.DisplayMember = "nm_cabang";
+            cbxcabang.ValueMember = "id_cabang";
+            cbxcabang.DataSource = ds.Tables[0];
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
