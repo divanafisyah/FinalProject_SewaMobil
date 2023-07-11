@@ -162,13 +162,8 @@ namespace FinalProject_SewaMobil
                 MessageBox.Show("Masukkan No Telepon", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (cabang == "")
-            {
-                MessageBox.Show("Masukkan Nama Cabang", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
-            string sql = "UPDATE hire_point SET id_hp = @id, nm_hp = @nm, adr_hp = @adr, telp_hp = @telp, id_cabang = @idc WHERE id_hp = @id";
+            string sql = "UPDATE hire_point SET nm_hp = @nm, adr_hp = @adr, telp_hp = @telp, id_cabang = @idc WHERE id_hp = @id";
             using (SqlCommand command = new SqlCommand(sql, koneksi))
             {
                 command.Parameters.AddWithValue("@id", id_hp);

@@ -157,13 +157,8 @@ namespace FinalProject_SewaMobil
                 MessageBox.Show("Masukkan Tahun Keluar Mobil", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (cabang == "")
-            {
-                MessageBox.Show("Masukkan Nama Cabang Pemilik Mobil", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
-            string sql = "UPDATE mobil SET id_mobil = @id, nm_mobil = @nm, merk = @merk, tipe = @tipe, warna = @wrn, thn_buat = @thn, kapasitas = @kapas, biaya_sewa_hari = @biaya, id_cabang = @idc";
+            string sql = "UPDATE mobil SET nm_mobil = @nm, merk = @merk, tipe = @tipe, warna = @wrn, thn_buat = @thn, kapasitas = @kapas, biaya_sewa_hari = @biaya, id_cabang = @idc WHERE id_mobil = @id";
             using (SqlCommand command = new SqlCommand(sql, koneksi))
             {
                 command.Parameters.AddWithValue("@id", id);
