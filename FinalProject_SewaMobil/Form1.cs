@@ -31,5 +31,26 @@ namespace FinalProject_SewaMobil
         {
 
         }
+
+        private void dataCabangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data_Cabang fm = new Data_Cabang();
+            fm.Show();
+            this.Hide();
+        }
+
+        private void dataPenyewaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Penyewa fm = new Penyewa();
+            fm.Show();
+            this.Hide();
+        }
+
+        private void dataKaryawanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data_Karyawan fm = new Data_Karyawan();
+            fm.Show();
+            this.Hide();
+        }
     }
 }

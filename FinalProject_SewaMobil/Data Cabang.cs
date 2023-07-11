@@ -71,11 +71,18 @@ namespace FinalProject_SewaMobil
             refreshform();
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Form1 fm = new Form1();
+            fm.Show();
+            this.Hide();
+        }
+
         private void Cabang_Load()
         {
             koneksi.Open();
-            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_cabang, m.nm_cabang, "
-                + "m.adr_cabang, m.telp_cabang, m.jmlh_mobil", koneksi));
+            SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select id_cabang, nm_cabang, "
+                + "adr_cabang, telp_cabang, jmlh_mobil From dbo.cabang", koneksi));
             DataSet ds = new DataSet();
             dataAdapter1.Fill(ds);
 
@@ -87,7 +94,7 @@ namespace FinalProject_SewaMobil
             this.txtalamat.DataBindings.Add(
                new Binding("Text", this.customerBindingSource, "adr_cabang", true));
             this.txttelepon.DataBindings.Add(
-               new Binding("Text", this.customerBindingSource, "telp_kry", true));
+               new Binding("Text", this.customerBindingSource, "telp_cabang", true));
             this.txtjumlah.DataBindings.Add(
                new Binding("Text", this.customerBindingSource, "jmlh_mobil", true));
             koneksi.Close();

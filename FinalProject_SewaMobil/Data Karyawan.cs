@@ -30,7 +30,7 @@ namespace FinalProject_SewaMobil
         {
             koneksi.Open();
             SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_kry, m.nm_kry, "
-                + "m.jabatan, m.telp_kry, m.adr_kry, p.id_cabang From dbo.karyawan m " +
+                + "m.jabatan, m.telp_kry, m.adr_kry, p.nm_cabang From dbo.karyawan m " +
                 "join dbo.cabang p on m.id_cabang = p.id_cabang", koneksi));
             DataSet ds = new DataSet();
             dataAdapter1.Fill(ds);
@@ -88,6 +88,13 @@ namespace FinalProject_SewaMobil
         private void btnClear_Click(object sender, EventArgs e)
         {
             refreshform();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Form1 fm = new Form1();
+            fm.Show();
+            this.Hide();
         }
 
         private void clearBinding()

@@ -82,11 +82,18 @@ namespace FinalProject_SewaMobil
             refreshform();
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Form1 fm = new Form1();
+            fm.Show();
+            this.Hide();
+        }
+
         private void Penyewa_Load()
         {
             koneksi.Open();
             SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_penyewa, m.nm_penyewa, "
-                + "m.adr_penyewa, m.telp_penyewa, m.identitas, p.id_kry From dbo.penyewa m " +
+                + "m.adr_penyewa, m.telp_penyewa, m.identitas, p.nm_kry From dbo.penyewa m " +
                 "join dbo.karyawan p on m.id_kry = p.id_kry", koneksi));
             DataSet ds = new DataSet();
             dataAdapter1.Fill(ds);
@@ -103,7 +110,7 @@ namespace FinalProject_SewaMobil
             this.cbxidentity.DataBindings.Add(
                new Binding("Text", this.customerBindingSource, "identitas", true));
             this.cbxkrywn.DataBindings.Add(
-               new Binding("Text", this.customerBindingSource, "id_kry", true));
+               new Binding("Text", this.customerBindingSource, "nm_kry", true));
             koneksi.Close();
         }
 

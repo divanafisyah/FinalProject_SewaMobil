@@ -88,12 +88,14 @@
             this.dataPenyewaToolStripMenuItem.Name = "dataPenyewaToolStripMenuItem";
             this.dataPenyewaToolStripMenuItem.Size = new System.Drawing.Size(272, 34);
             this.dataPenyewaToolStripMenuItem.Text = "Data Penyewa";
+            this.dataPenyewaToolStripMenuItem.Click += new System.EventHandler(this.dataPenyewaToolStripMenuItem_Click);
             // 
             // dataKaryawanToolStripMenuItem
             // 
             this.dataKaryawanToolStripMenuItem.Name = "dataKaryawanToolStripMenuItem";
             this.dataKaryawanToolStripMenuItem.Size = new System.Drawing.Size(272, 34);
             this.dataKaryawanToolStripMenuItem.Text = "Data Karyawan";
+            this.dataKaryawanToolStripMenuItem.Click += new System.EventHandler(this.dataKaryawanToolStripMenuItem_Click);
             // 
             // dataMobilToolStripMenuItem
             // 
@@ -112,6 +114,7 @@
             this.dataCabangToolStripMenuItem.Name = "dataCabangToolStripMenuItem";
             this.dataCabangToolStripMenuItem.Size = new System.Drawing.Size(272, 34);
             this.dataCabangToolStripMenuItem.Text = "Data Cabang";
+            this.dataCabangToolStripMenuItem.Click += new System.EventHandler(this.dataCabangToolStripMenuItem_Click);
             // 
             // label1
             // 
