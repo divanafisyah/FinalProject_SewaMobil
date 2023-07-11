@@ -102,6 +102,7 @@
             this.dataMobilToolStripMenuItem.Name = "dataMobilToolStripMenuItem";
             this.dataMobilToolStripMenuItem.Size = new System.Drawing.Size(272, 34);
             this.dataMobilToolStripMenuItem.Text = "Data Mobil";
+            this.dataMobilToolStripMenuItem.Click += new System.EventHandler(this.dataMobilToolStripMenuItem_Click);
             // 
             // dataHirePointToolStripMenuItem
             // 

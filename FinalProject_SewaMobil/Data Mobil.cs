@@ -62,6 +62,13 @@ namespace FinalProject_SewaMobil
             refreshform();
         }
 
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Form1 fm = new Form1();
+            fm.Show();
+            this.Hide();
+        }
+
         BindingSource customerBindingSource = new BindingSource();
         public Data_Mobil()
         {
@@ -75,7 +82,7 @@ namespace FinalProject_SewaMobil
         {
             koneksi.Open();
             SqlDataAdapter dataAdapter1 = new SqlDataAdapter(new SqlCommand("Select m.id_mobil, m.nm_mobil, "
-                + "m.merk, m.tipe, m.warna, m.thn_buat, m.kapasitas, biaya_sewa_hari, p.nm_cabang From dbo.karyawan m " +
+                + "m.merk, m.tipe, m.warna, m.thn_buat, m.kapasitas, biaya_sewa_hari, p.nm_cabang From dbo.mobil m " +
                 "join dbo.cabang p on m.id_cabang = p.id_cabang", koneksi));
             DataSet ds = new DataSet();
             dataAdapter1.Fill(ds);

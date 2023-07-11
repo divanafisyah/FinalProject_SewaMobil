@@ -52,5 +52,12 @@ namespace FinalProject_SewaMobil
             fm.Show();
             this.Hide();
         }
+
+        private void dataMobilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data_Mobil fm = new Data_Mobil();
+            fm.Show();
+            this.Hide();
+        }
     }
 }
