@@ -114,6 +114,72 @@ namespace FinalProject_SewaMobil
             }
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string cabang = txtID.Text;
+            string nama = txtcabang.Text;
+            string adr = txtalamat.Text;
+            string telp = txttelepon.Text;
+            string jumlah = txtjumlah.Text;
+
+            if (cabang == "")
+            {
+                MessageBox.Show("ID Cabang tidak valid", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (nama == "")
+            {
+                MessageBox.Show("Masukkan Nama Cabang", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (adr == "")
+            {
+                MessageBox.Show("Masukkan Alamat Cabang", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (telp == "")
+            {
+                MessageBox.Show("Masukkan No Telepon", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (jumlah == "")
+            {
+                MessageBox.Show("Masukkan Jumlah Mobil Yang Tersedia", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+                string sql = "UPDATE cabang SET nm_cabang = @nm, adr_cabang = @adr, telp_cabang = @telp, jmlh_mobil = @jmlh WHERE id_cabang = @id";
+            using (SqlCommand command = new SqlCommand(sql, koneksi))
+            {
+                command.Parameters.AddWithValue("@id", cabang);
+                command.Parameters.AddWithValue("@nm", nama);
+                command.Parameters.AddWithValue("@adr", adr);
+                command.Parameters.AddWithValue("@telp", telp);
+                command.Parameters.AddWithValue("@jmlh", jumlah);
+
+                try
+                {
+                    koneksi.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Data berhasil diperbarui", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        koneksi.Close();
+                        refreshform();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data tidak ditemukan.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
         private void Cabang_Load()
         {
             koneksi.Open();
