@@ -77,6 +77,11 @@ namespace FinalProject_SewaMobil
             refreshform();
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            refreshform();
+        }
+
         private void Penyewa_Load()
         {
             koneksi.Open();
