@@ -98,6 +98,42 @@ namespace FinalProject_SewaMobil
             this.Hide();
         }
 
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            string id = txtID.Text;
+            if (id == "")
+            {
+                MessageBox.Show("Masukkan ID Hire Point yang akan dihapus", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string sql = "DELETE FROM hire_point WHERE id_hp = @id_hp";
+            using (SqlCommand command = new SqlCommand(sql, koneksi))
+            {
+                command.Parameters.AddWithValue("@id_hp", id);
+
+                try
+                {
+                    koneksi.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Data berhasil dihapus", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        koneksi.Close();
+                        refreshform();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data tidak ditemukan.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
         private void clearBinding()
         {
             this.txtID.DataBindings.Clear();
