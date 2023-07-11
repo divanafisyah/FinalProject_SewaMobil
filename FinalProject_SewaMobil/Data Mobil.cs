@@ -105,6 +105,100 @@ namespace FinalProject_SewaMobil
             }
         }
 
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string id = IDmobil.Text;
+            string nma = txtnama.Text;
+            string merk = txtmerk.Text;
+            string tipe = txttipe.Text;
+            string warna = txtwarna.Text;
+            string tahun = txttahun.Text;
+            string kapas = txtkapas.Text;
+            string biaya = txtbiaya.Text;
+            string cabang = cbxcabang.Text;
+
+            if (id == "")
+            {
+                MessageBox.Show("ID Mobil tidak valid", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (nma == "")
+            {
+                MessageBox.Show("Masukkan Nama Mobil", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (merk == "")
+            {
+                MessageBox.Show("Masukkan Merk Mobil", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (tipe == "")
+            {
+                MessageBox.Show("Masukkan Tipe Mobil", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (warna == "")
+            {
+                MessageBox.Show("Masukkan Warna Mobil", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (kapas == "")
+            {
+                MessageBox.Show("Masukkan Kapasitas Mobil", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (biaya == "")
+            {
+                MessageBox.Show("Masukkan Biaya Sewa Mobil", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (tahun == "")
+            {
+                MessageBox.Show("Masukkan Tahun Keluar Mobil", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (cabang == "")
+            {
+                MessageBox.Show("Masukkan Nama Cabang Pemilik Mobil", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string sql = "UPDATE mobil SET id_mobil = @id, nm_mobil = @nm, merk = @merk, tipe = @tipe, warna = @wrn, thn_buat = @thn, kapasitas = @kapas, biaya_sewa_hari = @biaya, id_cabang = @idc";
+            using (SqlCommand command = new SqlCommand(sql, koneksi))
+            {
+                command.Parameters.AddWithValue("@id", id);
+                command.Parameters.AddWithValue("@nm", nma);
+                command.Parameters.AddWithValue("@merk", merk);
+                command.Parameters.AddWithValue("@tipe", tipe);
+                command.Parameters.AddWithValue("@wrn", warna);
+                command.Parameters.AddWithValue("@kapas", kapas);
+                command.Parameters.AddWithValue("@biaya", biaya);
+                command.Parameters.AddWithValue("@thn", tahun);
+                command.Parameters.AddWithValue("@idc", cabang);
+
+                try
+                {
+                    koneksi.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Data berhasil diperbarui", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        koneksi.Close();
+                        refreshform();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Data tidak ditemukan.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
         BindingSource customerBindingSource = new BindingSource();
         public Data_Mobil()
         {
