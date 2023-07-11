@@ -91,7 +91,19 @@ namespace FinalProject_SewaMobil
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            txtadr.Text = "";
+            txtID.Text = "";
+            txtnama.Text = "";
+            txttelp.Text = "";
+            txtadr.Enabled = true;
+            txtID.Enabled = true;
+            cbxcabang.Enabled = true;
+            txtnama.Enabled = true;
+            txttelp.Enabled = true;
+            Cabangcbx();
+            btnAdd.Enabled = true;
+            btnClear.Enabled = true;
+            btnSave.Enabled = true;
         }
     }
 }
