@@ -1,6 +1,6 @@
 ﻿namespace FinalProject_SewaMobil
 {
-    partial class Penyewa
+    partial class Data_Cabang
     {
         /// <summary>
         /// Required designer variable.
@@ -29,33 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Penyewa));
-            this.txtnama = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Data_Cabang));
+            this.label6 = new System.Windows.Forms.Label();
+            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.txtcabang = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtalamat = new System.Windows.Forms.TextBox();
+            this.txttelepon = new System.Windows.Forms.TextBox();
+            this.txtjumlah = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtadr = new System.Windows.Forms.TextBox();
-            this.idpenyewa = new System.Windows.Forms.TextBox();
-            this.txttelp = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
-            this.cbxkrywn = new System.Windows.Forms.ComboBox();
-            this.cbxidentity = new System.Windows.Forms.ComboBox();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.label7 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -63,131 +61,16 @@
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtnama
-            // 
-            this.txtnama.Location = new System.Drawing.Point(302, 186);
-            this.txtnama.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtnama.Name = "txtnama";
-            this.txtnama.Size = new System.Drawing.Size(271, 26);
-            this.txtnama.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(132, 189);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nama Penyewa";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(132, 224);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Alamat";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(132, 259);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "ID Penyewa";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(132, 297);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 20);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "No. Telp Penyewa";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(132, 339);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 20);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Jenis Identitas";
-            // 
-            // txtadr
-            // 
-            this.txtadr.Location = new System.Drawing.Point(302, 221);
-            this.txtadr.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtadr.Name = "txtadr";
-            this.txtadr.Size = new System.Drawing.Size(271, 26);
-            this.txtadr.TabIndex = 6;
-            // 
-            // idpenyewa
-            // 
-            this.idpenyewa.Location = new System.Drawing.Point(302, 256);
-            this.idpenyewa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.idpenyewa.Name = "idpenyewa";
-            this.idpenyewa.Size = new System.Drawing.Size(271, 26);
-            this.idpenyewa.TabIndex = 7;
-            // 
-            // txttelp
-            // 
-            this.txttelp.Location = new System.Drawing.Point(302, 291);
-            this.txttelp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txttelp.Name = "txttelp";
-            this.txttelp.Size = new System.Drawing.Size(271, 26);
-            this.txttelp.TabIndex = 8;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Palatino Linotype", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(201, 91);
+            this.label6.Location = new System.Drawing.Point(219, 60);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(349, 55);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "DATA PENYEWA";
-            // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(39, 74);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(76, 32);
-            this.btnBack.TabIndex = 11;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = false;
-            // 
-            // cbxkrywn
-            // 
-            this.cbxkrywn.FormattingEnabled = true;
-            this.cbxkrywn.Items.AddRange(new object[] {
-            "KTP",
-            "SIM",
-            "PASPOR"});
-            this.cbxkrywn.Location = new System.Drawing.Point(302, 376);
-            this.cbxkrywn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbxkrywn.Name = "cbxkrywn";
-            this.cbxkrywn.Size = new System.Drawing.Size(271, 28);
-            this.cbxkrywn.TabIndex = 12;
-            // 
-            // cbxidentity
-            // 
-            this.cbxidentity.FormattingEnabled = true;
-            this.cbxidentity.Items.AddRange(new object[] {
-            "KTP",
-            "SIM",
-            "PASPOR"});
-            this.cbxidentity.Location = new System.Drawing.Point(302, 331);
-            this.cbxidentity.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbxidentity.Name = "cbxidentity";
-            this.cbxidentity.Size = new System.Drawing.Size(271, 28);
-            this.cbxidentity.TabIndex = 13;
+            this.label6.Size = new System.Drawing.Size(333, 55);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "DATA CABANG";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // bindingNavigator1
             // 
@@ -214,9 +97,34 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(753, 33);
-            this.bindingNavigator1.TabIndex = 14;
+            this.bindingNavigator1.Size = new System.Drawing.Size(798, 33);
+            this.bindingNavigator1.TabIndex = 24;
             this.bindingNavigator1.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -251,16 +159,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 28);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorMoveNextItem
@@ -283,102 +184,166 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
             // 
-            // bindingNavigatorAddNewItem
+            // txtcabang
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.txtcabang.Location = new System.Drawing.Point(346, 167);
+            this.txtcabang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtcabang.Name = "txtcabang";
+            this.txtcabang.Size = new System.Drawing.Size(271, 26);
+            this.txtcabang.TabIndex = 25;
             // 
-            // bindingNavigatorDeleteItem
+            // txtID
             // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.txtID.Location = new System.Drawing.Point(346, 217);
+            this.txtID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(271, 26);
+            this.txtID.TabIndex = 26;
             // 
-            // label7
+            // txtalamat
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(132, 384);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(150, 20);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Karyawan Pengurus";
+            this.txtalamat.Location = new System.Drawing.Point(346, 269);
+            this.txtalamat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtalamat.Name = "txtalamat";
+            this.txtalamat.Size = new System.Drawing.Size(271, 26);
+            this.txtalamat.TabIndex = 27;
+            // 
+            // txttelepon
+            // 
+            this.txttelepon.Location = new System.Drawing.Point(346, 318);
+            this.txttelepon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txttelepon.Name = "txttelepon";
+            this.txttelepon.Size = new System.Drawing.Size(271, 26);
+            this.txttelepon.TabIndex = 28;
+            // 
+            // txtjumlah
+            // 
+            this.txtjumlah.Location = new System.Drawing.Point(346, 370);
+            this.txtjumlah.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtjumlah.Name = "txtjumlah";
+            this.txtjumlah.Size = new System.Drawing.Size(271, 26);
+            this.txtjumlah.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(147, 167);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 20);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Nama Cabang";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(147, 220);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "ID Cabang";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(147, 269);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 20);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Alamat";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(147, 321);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 20);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "No. Telepon";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(147, 373);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 20);
+            this.label5.TabIndex = 34;
+            this.label5.Text = "Jumlah Mobil";
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Location = new System.Drawing.Point(37, 72);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 43);
+            this.btnBack.TabIndex = 35;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = false;
             // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(191, 445);
+            this.btnAdd.Location = new System.Drawing.Point(186, 442);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(76, 32);
-            this.btnAdd.TabIndex = 16;
+            this.btnAdd.TabIndex = 36;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(333, 445);
+            this.btnSave.Location = new System.Drawing.Point(346, 442);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(76, 32);
-            this.btnSave.TabIndex = 17;
+            this.btnSave.TabIndex = 37;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(474, 445);
+            this.btnClear.Location = new System.Drawing.Point(506, 442);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(76, 32);
-            this.btnClear.TabIndex = 18;
+            this.btnClear.TabIndex = 38;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // Penyewa
+            // Data_Cabang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(753, 562);
+            this.ClientSize = new System.Drawing.Size(798, 528);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.bindingNavigator1);
-            this.Controls.Add(this.cbxidentity);
-            this.Controls.Add(this.cbxkrywn);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txttelp);
-            this.Controls.Add(this.idpenyewa);
-            this.Controls.Add(this.txtadr);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtnama);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Penyewa";
-            this.Text = "Penyewa";
+            this.Controls.Add(this.txtjumlah);
+            this.Controls.Add(this.txttelepon);
+            this.Controls.Add(this.txtalamat);
+            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.txtcabang);
+            this.Controls.Add(this.bindingNavigator1);
+            this.Controls.Add(this.label6);
+            this.Name = "Data_Cabang";
+            this.Text = "Data_Cabang";
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
@@ -389,19 +354,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtnama;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtadr;
-        private System.Windows.Forms.TextBox idpenyewa;
-        private System.Windows.Forms.TextBox txttelp;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.ComboBox cbxkrywn;
-        private System.Windows.Forms.ComboBox cbxidentity;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -414,9 +367,19 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtcabang;
+        private System.Windows.Forms.TextBox txtalamat;
+        private System.Windows.Forms.TextBox txttelepon;
+        private System.Windows.Forms.TextBox txtjumlah;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

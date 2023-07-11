@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data Cabang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data Cabang.Designer.cs">
+      <DependentUpon>Data Cabang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data Hire Point.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Data Cabang.resx">
+      <DependentUpon>Data Cabang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Data Hire Point.resx">
       <DependentUpon>Data Hire Point.cs</DependentUpon>
     </EmbeddedResource>
