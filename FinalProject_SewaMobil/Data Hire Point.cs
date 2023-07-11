@@ -83,6 +83,11 @@ namespace FinalProject_SewaMobil
             refreshform();
         }
 
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            refreshform();
+        }
+
         private void clearBinding()
         {
             this.txtID.DataBindings.Clear();
