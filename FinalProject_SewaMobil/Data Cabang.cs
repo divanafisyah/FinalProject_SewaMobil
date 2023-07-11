@@ -44,6 +44,29 @@ namespace FinalProject_SewaMobil
             koneksi.Close();
         }
 
+        private void clearBinding()
+        {
+            this.txtalamat.DataBindings.Clear();
+            this.txtcabang.DataBindings.Clear();
+            this.txtjumlah.DataBindings.Clear();
+            this.txttelepon.DataBindings.Clear();
+            this.txtID.DataBindings.Clear();
+        }
+
+        private void refreshform()
+        {
+            txtID.Enabled = false;
+            txtcabang.Enabled = false;
+            txttelepon.Enabled = false;
+            txtalamat.Enabled = false;
+            txtjumlah.Enabled = false;
+            btnAdd.Enabled = true;
+            btnClear.Enabled = false;
+            btnSave.Enabled = false;
+            clearBinding();
+            Cabang_Load();
+        }
+
         private void label6_Click(object sender, EventArgs e)
         {
 
