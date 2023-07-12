@@ -167,7 +167,7 @@
             "Failed",
             "On Process",
             "Success",
-            "Done"});
+            "Sudah Dikembalikan"});
             this.cbxstatus.Location = new System.Drawing.Point(353, 674);
             this.cbxstatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxstatus.Name = "cbxstatus";
