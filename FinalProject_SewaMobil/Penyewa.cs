@@ -258,8 +258,8 @@ namespace FinalProject_SewaMobil
             da.Fill(ds);
             cmd.ExecuteReader();
             koneksi.Close();
-            cbxkrywn.DisplayMember = "nm_cabang";
-            cbxkrywn.ValueMember = "id_cabang";
+            cbxkrywn.DisplayMember = "nm_kry";
+            cbxkrywn.ValueMember = "id_kry";
             cbxkrywn.DataSource = ds.Tables[0];
         }
 

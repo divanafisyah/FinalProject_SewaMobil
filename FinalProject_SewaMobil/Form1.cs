@@ -66,5 +66,12 @@ namespace FinalProject_SewaMobil
             fm.Show();
             this.Hide();
         }
+
+        private void formPemesananToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Pemesanan fm = new Form_Pemesanan();
+            fm.Show();
+            this.Hide();
+        }
     }
 }
