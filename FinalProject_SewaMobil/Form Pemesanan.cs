@@ -172,8 +172,8 @@ namespace FinalProject_SewaMobil
                     {
                         MessageBox.Show("Data berhasil disimpan", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         koneksi.Close();
-                        refreshform(); // Mengosongkan form setelah menyimpan
-                        dataGridView(); // Refresh tampilan data setelah menyimpan
+                        refreshform();
+                        dataGridView();
                     }
                     else
                     {
