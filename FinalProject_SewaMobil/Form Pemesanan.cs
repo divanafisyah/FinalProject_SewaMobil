@@ -200,10 +200,10 @@ namespace FinalProject_SewaMobil
                 return;
             }
 
-            string id = dataGridView1.SelectedRows[0].Cells["id_penyewa"].Value.ToString();
-            string nm = cbxpenyewa.Text;
-            string mbl = cbxmobil.Text;
-            string stt = cbxstatus.Text;
+             id = dataGridView1.SelectedRows[0].Cells["id_penyewa"].Value.ToString();
+             nm = cbxpenyewa.Text;
+             mobil = cbxmobil.Text;
+            status = cbxstatus.Text;
             tgl = datetgl.Value;
 
             if (id == "")
@@ -216,12 +216,12 @@ namespace FinalProject_SewaMobil
                 MessageBox.Show("Masukkan Nama penyewa", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (mbl == "")
+            if (mobil == "")
             {
                 MessageBox.Show("Masukkan ID Mobil", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (stt == "")
+            if (status == "")
             {
                 MessageBox.Show("Masukkan Status", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -232,7 +232,7 @@ namespace FinalProject_SewaMobil
             {
                 command.Parameters.AddWithValue("@id", id);
                 command.Parameters.AddWithValue("@tgl", tgl);
-                command.Parameters.AddWithValue("@stat", stt);
+                command.Parameters.AddWithValue("@stat", status);
                 command.Parameters.AddWithValue("@idp", nm);
                 command.Parameters.AddWithValue("@idm", mobil);
 
