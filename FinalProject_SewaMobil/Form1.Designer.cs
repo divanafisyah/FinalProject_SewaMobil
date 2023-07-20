@@ -48,7 +48,7 @@
             this.toolStripDropDownButton1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(864, 29);
+            this.toolStrip2.Size = new System.Drawing.Size(933, 29);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             this.toolStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip2_ItemClicked);
@@ -72,42 +72,42 @@
             // formPemesananToolStripMenuItem
             // 
             this.formPemesananToolStripMenuItem.Name = "formPemesananToolStripMenuItem";
-            this.formPemesananToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.formPemesananToolStripMenuItem.Size = new System.Drawing.Size(250, 34);
             this.formPemesananToolStripMenuItem.Text = "Form Pemesanan";
             this.formPemesananToolStripMenuItem.Click += new System.EventHandler(this.formPemesananToolStripMenuItem_Click);
             // 
             // dataPenyewaToolStripMenuItem
             // 
             this.dataPenyewaToolStripMenuItem.Name = "dataPenyewaToolStripMenuItem";
-            this.dataPenyewaToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.dataPenyewaToolStripMenuItem.Size = new System.Drawing.Size(250, 34);
             this.dataPenyewaToolStripMenuItem.Text = "Data Penyewa";
             this.dataPenyewaToolStripMenuItem.Click += new System.EventHandler(this.dataPenyewaToolStripMenuItem_Click);
             // 
             // dataKaryawanToolStripMenuItem
             // 
             this.dataKaryawanToolStripMenuItem.Name = "dataKaryawanToolStripMenuItem";
-            this.dataKaryawanToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.dataKaryawanToolStripMenuItem.Size = new System.Drawing.Size(250, 34);
             this.dataKaryawanToolStripMenuItem.Text = "Data Karyawan";
             this.dataKaryawanToolStripMenuItem.Click += new System.EventHandler(this.dataKaryawanToolStripMenuItem_Click);
             // 
             // dataMobilToolStripMenuItem
             // 
             this.dataMobilToolStripMenuItem.Name = "dataMobilToolStripMenuItem";
-            this.dataMobilToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.dataMobilToolStripMenuItem.Size = new System.Drawing.Size(250, 34);
             this.dataMobilToolStripMenuItem.Text = "Data Mobil";
             this.dataMobilToolStripMenuItem.Click += new System.EventHandler(this.dataMobilToolStripMenuItem_Click);
             // 
             // dataHirePointToolStripMenuItem
             // 
             this.dataHirePointToolStripMenuItem.Name = "dataHirePointToolStripMenuItem";
-            this.dataHirePointToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.dataHirePointToolStripMenuItem.Size = new System.Drawing.Size(250, 34);
             this.dataHirePointToolStripMenuItem.Text = "Data Hire Point";
             this.dataHirePointToolStripMenuItem.Click += new System.EventHandler(this.dataHirePointToolStripMenuItem_Click);
             // 
             // dataCabangToolStripMenuItem
             // 
             this.dataCabangToolStripMenuItem.Name = "dataCabangToolStripMenuItem";
-            this.dataCabangToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.dataCabangToolStripMenuItem.Size = new System.Drawing.Size(250, 34);
             this.dataCabangToolStripMenuItem.Text = "Data Cabang";
             this.dataCabangToolStripMenuItem.Click += new System.EventHandler(this.dataCabangToolStripMenuItem_Click);
             // 
@@ -126,7 +126,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.OldLace;
-            this.ClientSize = new System.Drawing.Size(864, 562);
+            this.ClientSize = new System.Drawing.Size(933, 562);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip2);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);

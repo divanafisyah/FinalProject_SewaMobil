@@ -202,7 +202,7 @@
             this.btnDelete.Location = new System.Drawing.Point(644, 669);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(88, 32);
+            this.btnDelete.Size = new System.Drawing.Size(101, 45);
             this.btnDelete.TabIndex = 48;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -215,7 +215,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(645, 598);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 32);
+            this.btnUpdate.Size = new System.Drawing.Size(100, 48);
             this.btnUpdate.TabIndex = 47;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -228,7 +228,7 @@
             this.btnClear.Location = new System.Drawing.Point(815, 468);
             this.btnClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(76, 32);
+            this.btnClear.Size = new System.Drawing.Size(79, 42);
             this.btnClear.TabIndex = 46;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -238,10 +238,10 @@
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(656, 530);
+            this.btnSave.Location = new System.Drawing.Point(645, 530);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(76, 32);
+            this.btnSave.Size = new System.Drawing.Size(87, 45);
             this.btnSave.TabIndex = 45;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -251,10 +251,10 @@
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(656, 468);
+            this.btnAdd.Location = new System.Drawing.Point(645, 468);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(76, 32);
+            this.btnAdd.Size = new System.Drawing.Size(87, 42);
             this.btnAdd.TabIndex = 44;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = false;
